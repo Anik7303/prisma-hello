@@ -1,3 +1,4 @@
+import { PrismaClient } from "@prisma/client";
 import dotenv from "dotenv";
 import express from "express";
 
@@ -24,9 +25,32 @@ app.use(notFound);
 app.use(catchAllError);
 
 async function main() {
-  await app.listen(parseInt(PORT));
-  console.log(`Local address: http://127.0.0.1:${PORT}`);
-  console.log(`Network address: http://${getNetworkIP()}:${PORT}`);
+  const prisma = new PrismaClient();
+  try {
+    await app.listen(parseInt(PORT));
+    console.log(`Local address: http://127.0.0.1:${PORT}`);
+    console.log(`Network address: http://${getNetworkIP()}:${PORT}`);
+
+    // await prisma.user.create({
+    //   data: {
+    //     email: "john@gmail.com",
+    //     name: "John Doe",
+    //     posts: {
+    //       create: {
+    //         title: "Post 1",
+    //         content: "Post content 1",
+    //       },
+    //     },
+    //   },
+    // });
+
+    const users = await prisma.user.findMany({ include: { posts: true } });
+    console.log({ users });
+  } catch (error: unknown) {
+    if (error instanceof Error) console.error(error.message);
+  } finally {
+    await prisma.$disconnect();
+  }
 }
 
 main();
