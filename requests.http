@@ -1,0 +1,9 @@
+@host = localhost
+@port = {{$dotenv PORT}}
+@baseurl = http://{{host}}:{{port}}
+
+### / route
+GET {{baseurl}}
+
+### /test route
+GET {{baseurl}}/test
