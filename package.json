@@ -1,0 +1,33 @@
+{
+  "name": "hello-prisma",
+  "version": "0.0.1",
+  "description": "Prisma demo app",
+  "main": "build/index.js",
+  "scripts": {
+    "prebuild": "rimraf build",
+    "build": "tsc --build",
+    "start": "node build/index.js",
+    "dev": "nodemon src/index.ts"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.9",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "Nodejs",
+    "Typescript",
+    "Express",
+    "Prisma"
+  ],
+  "author": "Anik Mohammad <anik7303@gmail.com>",
+  "license": "MIT"
+}

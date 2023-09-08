@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es2016",
+    // "lib": [],
+    "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true,
+
+    /* Modules */
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "moduleResolution": "Node10",
+    // "baseUrl": "./",
+    "paths": { "@/*": ["./src/*"] },
+    // "types": [],
+
+    /* Emit */
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "outDir": "./build",
+    "removeComments": true,
+    "noEmitOnError": true,
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "useUnknownInCatchVariables": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    // "allowUnusedLabels": true,
+    // "allowUnreachableCode": true,
+
+    /* Completeness */
+    // "skipDefaultLibCheck": true,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
+}

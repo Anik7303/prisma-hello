@@ -1,0 +1,14 @@
+# package files
+node_modules/*
+
+# build directory
+build/*
+dist/*
+
+# environment variables
+.env*
+!.env.example
+
+# misc
+*log*
+
